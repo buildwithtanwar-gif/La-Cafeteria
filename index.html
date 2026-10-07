@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>La Cafeteria | Piplod, Surat</title>
+
+  <meta
+    name="description"
+    content="La Cafeteria — Continental, Mexican and Italian cuisine in Piplod, Surat."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --black: #10100f;
+      --dark: #171614;
+      --cream: #f4eee3;
+      --muted: #aaa398;
+      --gold: #caa66a;
+      --gold-light: #e4c78f;
+      --white: #fff;
+      --border: rgba(255,255,255,.10);
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* ================= NAV ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(16,16,15,.78);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd6ca;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      padding: 11px 20px;
+      border-radius: 30px;
+      background: var(--gold);
+      color: #16120d !important;
+      font-weight: 700;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8,8,7,.94) 0%,
+          rgba(8,8,7,.72) 48%,
+          rgba(8,8,7,.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(58px, 8vw, 105px);
+      line-height: .95;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      color: #d0c8bc;
+      font-size: 18px;
+      max-width: 580px;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #17120c;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.25);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      max-width: 600px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      background: var(--dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 570px;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 55px;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .about-text h2 span {
+      color: var(--gold);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .feature-box {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      border-radius: 14px;
+      padding: 17px;
+    }
+
+    .feature-box strong {
+      display: block;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .feature-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= MENU ================= */
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .menu-tabs span {
+      border: 1px solid var(--border);
+      padding: 9px 18px;
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .35s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(202,166,106,.45);
+    }
+
+    .menu-img {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .menu-img img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .menu-card:hover .menu-img img {
+      transform: scale(1.06);
+    }
+
+    .menu-info {
+      padding: 21px;
+    }
+
+    .menu-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .menu-info p {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 42px;
+    }
+
+    .price {
+      display: block;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* ================= EXPERIENCE ================= */
+
+    .experience {
+      background:
+        linear-gradient(rgba(10,9,8,.82),rgba(10,9,8,.82)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=90")
+        center/cover fixed;
+
+      text-align: center;
+    }
+
+    .experience h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px,6vw,72px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .experience p {
+      max-width: 650px;
+      margin: auto auto 30px;
+      color: #d2cbc0;
+    }
+
+    /* ================= GALLERY ================= */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.3fr .8fr .8fr;
+      grid-template-rows: 270px 270px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* ================= REVIEWS ================= */
+
+    .reviews {
+      background: var(--dark);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .review {
+      background: #201e1a;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 17px;
+    }
+
+    .review p {
+      color: #d0c8bc;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .review strong {
+      font-size: 13px;
+    }
+
+    /* ================= INFO ================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 25px;
+    }
+
+    .info-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .info-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .info-row strong {
+      display: block;
+      color: var(--cream);
+      margin-bottom: 3px;
+    }
+
+    .map {
+      min-height: 430px;
+      border: 0;
+      width: 100%;
+      border-radius: 20px;
+      filter: grayscale(.7);
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      background: var(--gold);
+      color: #15110c;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      margin-bottom: 25px;
+    }
+
+    .cta .btn {
+      background: #15110c;
+      color: white;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #090908;
+      border-top: 1px solid var(--border);
+      padding: 38px 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid,
+      .review-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-image {
+        height: 430px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px 230px 230px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+    }
+
+    @media(max-width:600px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .menu-grid,
+      .review-grid,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,220px);
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        LA <span>CAFETERIA</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="tel:+918918670572" class="nav-cta">
+            Call Now
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Piplod • Surat
+        </div>
+
+        <h1>
+          Where Coffee<br>
+          <span>Meets Comfort.</span>
+        </h1>
+
+        <p class="hero-description">
+          A stylish café experience serving Continental, Mexican and Italian
+          favourites, handcrafted coffee and refreshing beverages in the heart
+          of Piplod, Surat.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#menu" class="btn btn-primary">
+            Explore Menu →
+          </a>
+
+          <a href="tel:+918918670572" class="btn btn-outline">
+            Book / Enquire
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container about-grid">
+
+      <div class="about-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=90"
+          alt="Cafe interior"
+        />
+
+      </div>
+
+
+      <div class="about-text">
+
+        <div class="eyebrow">
+          Welcome to La Cafeteria
+        </div>
+
+        <h2>
+          A Place For<br>
+          <span>Good Moments.</span>
+        </h2>
+
+        <p>
+          La Cafeteria is a vegetarian café in Piplod, Surat offering a
+          relaxed space for coffee, food, conversations and casual dining.
+        </p>
+
+        <p>
+          Whether you're meeting friends, working with Wi-Fi, enjoying a
+          family meal or looking for a romantic evening, La Cafeteria is
+          designed to make the experience comfortable.
+        </p>
+
+        <div class="features">
+
+          <div class="feature-box">
+            <strong>☕ Specialty Coffee</strong>
+            <span>Hot, cold & manual brew options</span>
+          </div>
+
+          <div class="feature-box">
+            <strong>🍽 Continental</strong>
+            <span>Fresh vegetarian food</span>
+          </div>
+
+          <div class="feature-box">
+            <strong>📶 Work Friendly</strong>
+            <span>Wi-Fi & comfortable seating</span>
+          </div>
+
+          <div class="feature-box">
+            <strong>🚗 Parking</strong>
+            <span>Parking available</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+
+  <section id="menu">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Our menu
+        </div>
+
+        <h2>
+          Something For Every Mood
+        </h2>
+
+        <p>
+          Explore coffee, refreshing beverages and delicious vegetarian
+          dishes.
+        </p>
+
+      </div>
+
+
+      <div class="menu-tabs">
+
+        <span>Coffee</span>
+        <span>Beverages</span>
+        <span>Starters</span>
+        <span>Sandwiches</span>
+        <span>Panini</span>
+        <span>Mexican</span>
+
+      </div>
+
+
+      <div class="menu-grid">
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=90"
+              alt="Coffee"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Macchiato</h3>
+
+            <p>
+              Bold espresso with a touch of milk foam.
+            </p>
+
+            <span class="price">
+              ₹190
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=90"
+              alt="Cappuccino"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Cappuccino</h3>
+
+            <p>
+              Smooth espresso with creamy steamed milk.
+            </p>
+
+            <span class="price">
+              See Full Menu
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=90"
+              alt="Pour Over Coffee"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Pour Over</h3>
+
+            <p>
+              Carefully brewed coffee using fresh ground beans.
+            </p>
+
+            <span class="price">
+              ₹240
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=90"
+              alt="French Fries"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Peri Peri Fries</h3>
+
+            <p>
+              Crispy fries with a bold peri peri twist.
+            </p>
+
+            <span class="price">
+              ₹280
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=900&q=90"
+              alt="Paneer dish"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Pesto Paneer</h3>
+
+            <p>
+              Cottage cheese, bell peppers and creamy pesto sauce.
+            </p>
+
+            <span class="price">
+              ₹410
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <div class="menu-img">
+
+            <img
+              src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=90"
+              alt="Food"
+            />
+
+          </div>
+
+          <div class="menu-info">
+
+            <h3>Cheese Spinach Roll</h3>
+
+            <p>
+              Crispy roll filled with cheese and spinach.
+            </p>
+
+            <span class="price">
+              ₹370
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        The La Cafeteria experience
+      </div>
+
+      <h2>
+        Coffee.<br>
+        Conversations.<br>
+        Memories.
+      </h2>
+
+      <p>
+        From your first coffee of the day to a late evening with friends,
+        discover a space made for slowing down and enjoying the moment.
+      </p>
+
+      <a href="tel:+918918670572" class="btn btn-primary">
+        Book a Table
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section id="gallery">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Inside La Cafeteria
+        </div>
+
+        <h2>
+          The Atmosphere
+        </h2>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <div class="gallery-item">
+
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=90"
+            alt="Restaurant interior"
+          />
+
+        </div>
+
+        <div class="gallery-item">
+
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=90"
+            alt="Coffee"
+          />
+
+        </div>
+
+        <div class="gallery-item">
+
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=90"
+            alt="Cafe"
+          />
+
+        </div>
+
+        <div class="gallery-item">
+
+          <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=90"
+            alt="Cafe seating"
+          />
+
+        </div>
+
+        <div class="gallery-item">
+
+          <img
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=90"
+            alt="Restaurant table"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+
+  <section class="reviews" id="reviews">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Guest experiences
+        </div>
+
+        <h2>
+          Loved By Guests
+        </h2>
+
+        <p>
+          La Cafeteria currently has strong ratings across dining platforms.
+        </p>
+
+      </div>
+
+
+      <div class="review-grid">
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "It was really amazing. Food is great and ambience is also
+            amazing especially at night."
+          </p>
+
+          <strong>
+            — Virani Sureshbhai
+          </strong>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Very tasty food with many choices. Coffee is their speciality."
+          </p>
+
+          <strong>
+            — Rakesh Agrawal
+          </strong>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Great services, food and ambiance. I enjoyed my time here."
+          </p>
+
+          <strong>
+            — Nandini
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Visit us
+        </div>
+
+        <h2>
+          Let's Meet At La Cafeteria
+        </h2>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            La Cafeteria
+          </h3>
+
+
+          <div class="info-row">
+
+            <strong>
+              📍 Address
+            </strong>
+
+            F-107, 1st Floor,
+            International Business Center,
+            Gaurav Path, Piplod,
+            Surat, Gujarat 395007
+
+          </div>
+
+
+          <div class="info-row">
+
+            <strong>
+              📞 Phone
+            </strong>
+
+            +91 89186 70572
+
+          </div>
+
+
+          <div class="info-row">
+
+            <strong>
+              🕐 Opening Hours
+            </strong>
+
+            9:15 AM – 11:45 PM
+
+          </div>
+
+
+          <div class="info-row">
+
+            <strong>
+              🍽 Cuisine
+            </strong>
+
+            Continental • Mexican • Italian
+
+          </div>
+
+
+          <div class="info-row">
+
+            <strong>
+              💰 Average Cost
+            </strong>
+
+            Around ₹1,400 for two
+
+          </div>
+
+
+          <div class="buttons" style="margin-top:25px;">
+
+            <a
+              href="tel:+918918670572"
+              class="btn btn-primary"
+            >
+              Call Now
+            </a>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=La+Cafeteria+Piplod+Surat"
+              target="_blank"
+              class="btn btn-outline"
+            >
+              Get Directions
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <iframe
+          class="map"
+          src="https://www.google.com/maps?q=La%20Cafeteria%20Piplod%20Surat&output=embed"
+          loading="lazy"
+          title="La Cafeteria location">
+        </iframe>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Your Table Is Waiting.
+      </h2>
+
+      <p>
+        Plan your next coffee, meal or evening at La Cafeteria.
+      </p>
+
+      <a
+        href="tel:+918918670572"
+        class="btn"
+      >
+        Call & Reserve →
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <div class="logo">
+        LA <span>CAFETERIA</span>
+      </div>
+
+      <p>
+        Piplod, Surat • Continental • Mexican • Italian
+      </p>
+
+      <p>
+        © 2026 La Cafeteria
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
